@@ -7,23 +7,20 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
     @IBOutlet var welcomeLabel: UILabel!
-    @IBOutlet var emojiLabel: UILabel!
     
-    var username: String!
-    
-    let gradientLayer = CAGradientLayer()
+    var userName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Welcome, \(username ?? "")!"
-        emojiLabel.text = "👋"
+        welcomeLabel.text = "Welcome, \(userName ?? "")!"
         setupGradientLayer()
     }
     
     private func setupGradientLayer() {
+        let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [UIColor.systemPink.cgColor, UIColor.systemCyan.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
